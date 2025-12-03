@@ -121,3 +121,6 @@ Contributions, improvements, and bug fixes are welcome. Please provide clear com
 
 This project is released under the **CC0 1.0 Universal (CC0 1.0) Public Domain Dedication**.  
 You are free to copy, modify, distribute, and use this work, even for commercial purposes, without asking for permission. No attribution is required.
+
+**Author:** Jeroen De Meester  
+**Repository:** [https://github.com/Jeroen-DeMeester/wikidata-property-checker](https://github.com/Jeroen-DeMeester/wikidata-property-checker)

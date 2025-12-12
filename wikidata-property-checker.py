@@ -1,7 +1,7 @@
-from argparse import ArgumentParser  # Voor het makkelijk inlezen van command-line argumenten
-import csv                           # Om CSV-bestanden te lezen en te schrijven
-import time                          # Voor pauzes tussen batches
-from rdflib.plugins.stores.sparqlstore import SPARQLStore  # Om SPARQL-queries uit te voeren tegen Wikidata
+from argparse import ArgumentParser  # For easily parsing command-line arguments
+import csv                           # For reading and writing CSV files
+import time                          # For inserting pauses between batches
+from rdflib.plugins.stores.sparqlstore import SPARQLStore  # For executing SPARQL queries against Wikidata
 
 def get_property_links_batch(property_id: str, batch_size: int = 50, pause_sec: float = 0.5):
     """
@@ -18,10 +18,12 @@ def get_property_links_batch(property_id: str, batch_size: int = 50, pause_sec: 
     print(f"Using SPARQL endpoint: {endpoint}")
     print(f"Checking property: {property_id}")
 
-    # Optional base URLs for certain properties (appears in output)
+    # Optional base URLs for certain properties (appears in output). 
     base_url_map = {
         'P245': 'http://vocab.getty.edu/ulan/',  # ULAN
         'P650': 'https://rkd.nl/artists/',  # rkdArtists
+        'P1871': 'http://data.cerl.org/thesaurus/', # cerl.org
+        'P214': 'http://viaf.org/viaf/', # viaf
         # Add more mappings here if needed
     }
     base_url = base_url_map.get(property_id, '')
@@ -84,6 +86,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     # Default to P245 if no property specified
+    # For other codes, run: python3 get_match_from_wikidata.py -p P1871
     property_id = args.property if args.property else "P245"
 
     get_property_links_batch(property_id=property_id)

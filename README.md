@@ -107,7 +107,7 @@ Review the `results.csv` file for found or missing properties.
 ```
 wikidata-property-checker/
 │
-├── get_match_from_wikidata.py
+├── wikidata-property-checker.py
 ├── source.csv
 ├── results.csv
 └── README.md

@@ -46,8 +46,12 @@ If a property is not listed here, the full_url column in the output CSV will rem
 You can extend the script by adding more mappings in base_url_map if needed:
 ```python
 base_url_map = {
-    'P245': 'http://vocab.getty.edu/ulan/',
-    'P650': 'https://rkd.nl/artists/',
+    'P245': 'http://vocab.getty.edu/ulan/',  # ULAN
+    'P650': 'https://rkd.nl/artists/',  # rkdArtists
+    'P1871': 'http://data.cerl.org/thesaurus/', # cerl.org
+    'P214': 'http://viaf.org/viaf/', # viaf
+    'P1667': 'http://vocab.getty.edu/tgn/',  # tgn
+    'P1566': 'https://sws.geonames.org/',  # geonames
     # Add more mappings here if needed
 }
 ```
